@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bear Ninja Hunter Game</title>
+</head>
+<body>
+  <h1>Bear Ninja Hunter Game</h1>
+  <script>
+    // Step 1: Ask for the user's name before the game starts
+    let userName = prompt("Before we begin, enter your name:");
+    alert("Welcome " + userName + "! Let's play Bear, Ninja, Hunter!");
+
+    // Step 2: Get user's choice
+    let userChoice = prompt("Choose one: Bear, Ninja, or Hunter").toLowerCase();
+
+    // Step 3: Computer's choice (hardcoded to Bear for this version)
+    let computerChoice = "bear";
+
+    // Step 4: Determine winner using switch
+    let result = "";
+
+    switch (userChoice) {
+      case "bear":
+        if (computerChoice === "bear") {
+          result = "It's a tie!";
+        } else if (computerChoice === "ninja") {
+          result = "Bear beats Ninja — You win!";
+        } else {
+          result = "Hunter beats Bear — You lose!";
+        }
+        break;
+
+      case "ninja":
+        if (computerChoice === "bear") {
+          result = "Bear beats Ninja — You lose!";
+        } else if (computerChoice === "ninja") {
+          result = "It's a tie!";
+        } else {
+          result = "Ninja beats Hunter — You win!";
+        }
+        break;
+
+      case "hunter":
+        if (computerChoice === "bear") {
+          result = "Hunter beats Bear — You win!";
+        } else if (computerChoice === "ninja") {
+          result = "Ninja beats Hunter — You lose!";
+        } else {
+          result = "It's a tie!";
+        }
+        break;
+
+      default:
+        result = "Invalid choice. Please choose Bear, Ninja, or Hunter.";
+    }
+
+    // Step 5: Output the result using two different output methods
+    alert(userName + ", you chose " + userChoice + ". Computer chose " + computerChoice + ". " + result);
+    document.write("<h2>" + userName + ", you chose " + userChoice + ". Computer chose " + computerChoice + ".</h2>");
+    document.write("<h3>" + result + "</h3>");
+  </script>
+</body>
+</html>
